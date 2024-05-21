@@ -17,7 +17,7 @@ const buyCake=()=>{
     }
 }
 
-const buyIceCreame=()=>{
+const buyIceCream=()=>{
     return{
         type:BUY_ICE_CREAME,
         info:"Sell Ice Creame",
@@ -29,7 +29,7 @@ const initialCakeState = {
     numOfCakes : 10
 }
 const initialIceCreameState={
-    numOfIcecreame:10
+    numOfIceCream:10
 }
 
 const cakeReducer =(state=initialCakeState,action)=>{
@@ -46,7 +46,7 @@ const iceCreameReducer =(state=initialIceCreameState,action)=>{
     switch(action.type){
         case BUY_ICE_CREAME: return{
             ...state,
-            numOfIcecreame:state.numOfIcecreame -action.payload
+            numOfIceCream:state.numOfIceCream -action.payload
         }
         default: return state
     }
@@ -65,8 +65,8 @@ const unsubscribe = store.subscribe(()=>{})
 
 store.dispatch(buyCake())
 store.dispatch(buyCake())
-store.dispatch(buyIceCreame())
-store.dispatch(buyIceCreame())
+store.dispatch(buyIceCream())
+store.dispatch(buyIceCream())
 
 unsubscribe()
 
