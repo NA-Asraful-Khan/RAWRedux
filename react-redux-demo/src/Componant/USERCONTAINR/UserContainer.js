@@ -5,8 +5,7 @@ import { connect } from 'react-redux'
 const UserContainer = ({ userData, fetchUser }) => {
     useEffect(() => {
         fetchUser()
-
-    }, [])
+    }, [fetchUser])
     return (userData.loading ? (
         <h2>Loading...</h2>
     ) : userData.error ? (
@@ -15,8 +14,10 @@ const UserContainer = ({ userData, fetchUser }) => {
         <div>
             <h2>User List</h2>
             {
-                userData && userData.users && userData.users.map(user => <p>{user.name}</p>)
+                userData && userData.users && userData.users.map((user,index) => <p key={index}>{user.name}</p>)
+                
             }
+            (console.log(userData))
         </div>
     )
     )
