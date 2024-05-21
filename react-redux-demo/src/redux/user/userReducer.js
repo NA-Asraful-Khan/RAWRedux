@@ -30,3 +30,5 @@ const userReducer = (state = initialUser, action) => {
     }
 };
 
+export default userReducer
+
