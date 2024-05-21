@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { buyIceCream } from '../redux/iceCreame/iceCreameAction'
+import { buyIceCream } from '../../redux/iceCreame/iceCreameAction'
 
 const HookIceCreamContainer = () => {
     const numOfIceCream = useSelector(state => state.iceCreame.numOfIceCream) 
