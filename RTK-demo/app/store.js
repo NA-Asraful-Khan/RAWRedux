@@ -1,22 +1,14 @@
-const createSlice = require('@reduxjs/toolkit').createSlice
+const { cakeReducer } = require("../features/cake/cakeSlice");
+const { iceCreameReducer } = require("../features/iceCream/iceCreamSlice");
 
+const configureStore = require("@reduxjs/toolkit").configureStore;
+// const cakeReducer = require("../features/cake/cakeSlice")
 
-const initialState = {
-    numOfCakes:10
-}
-
-const cakeSlice=createSlice({
-    name:'cake',
-    initialState,
-    reducers:{
-        ordered:(state)=>{
-            state.numOfCakes -= 1
-        },
-        restocked:(state,action)=>{
-            state.numOfCakes += action.payload
-        }
+const store = configureStore({
+    reducer:{
+        cake: cakeReducer,
+        iceCream:iceCreameReducer
     }
 })
 
-module.exports = cakeSlice.reducer
-module.exports.cakeActions = cakeSlice.actions
+module.exports = store
