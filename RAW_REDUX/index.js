@@ -1,5 +1,6 @@
 const redux = require('redux')
 const reduxLogger= require('redux-logger')
+const bindActionCreators = redux.bindActionCreators
 
 const createStore = redux.createStore
 const combineReducer=redux.combineReducers
@@ -63,10 +64,15 @@ console.log("Initial State",store.getState());
 
 const unsubscribe = store.subscribe(()=>{})
 
-store.dispatch(buyCake())
-store.dispatch(buyCake())
-store.dispatch(buyIceCream())
-store.dispatch(buyIceCream())
+// store.dispatch(buyCake())
+// store.dispatch(buyCake())
+// store.dispatch(buyIceCream())
+// store.dispatch(buyIceCream())
+
+const action =bindActionCreators({buyCake,buyIceCream}, store.dispatch)
+
+action.buyCake()
+action.buyIceCream()
 
 unsubscribe()
 
