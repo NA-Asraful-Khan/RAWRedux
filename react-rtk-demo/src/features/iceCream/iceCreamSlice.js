@@ -23,6 +23,6 @@ const iceCreamSlice = createSlice({
         // You can add more cases with builder.addCase(actionType, reducer)
     },
 })
-
-export default iceCreamSlice.reducer
+const iceCreamReducer = iceCreamSlice.reducer
+export default iceCreamReducer
 export const {ordered,restocked} = iceCreamSlice.actions
