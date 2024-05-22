@@ -2,7 +2,7 @@
 import './App.css'
 import CakeView from './features/cake/CakeView'
 import IceCreamView from './features/iceCream/IceCreamView'
-import { UserView } from './features/user/UserView'
+import UserView from './features/user/UserView'
 
 function App() {
 
@@ -12,6 +12,7 @@ function App() {
       <CakeView></CakeView>
       <IceCreamView></IceCreamView>
       <UserView></UserView>
+      
     </>
   )
 }

@@ -11,16 +11,16 @@ const cakeSlice=createSlice({
     initialState,
     reducers:{
         ordered:(state)=>{
-            state.numOfCakes -= 1
+            state.numOfCakes -= (state.numOfCakes>0?1:0)
         },
         restocked:(state,action)=>{
-            state.numOfCakes += action.payload
+            state.numOfCakes += (action.payload>0?action.payload:0)
         }
     },
     extraReducers:(builder)=>{
         builder
             .addCase(iceCreamOrdered,(state)=>{
-                state.numOfCakes-=1
+                state.numOfCakes-=(state.numOfCakes>0?1:0)
             })
     }
 })
